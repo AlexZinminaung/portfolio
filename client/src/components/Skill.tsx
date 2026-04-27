@@ -38,7 +38,7 @@ const Skill = () => {
 
                 {/* Real Time */}
                 <div className="flex-1 flex flex-col gap-8 p-5 bg-gray-950">
-                    <h3 className="text-green-400 text-xs">FRONTEND</h3>
+                    <h3 className="text-green-400 text-xs">REAL TIME</h3>
                     <ul className="text-white text-xs flex flex-col gap-2">
                         <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>Socket.io</span></li>  
                         <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>Live Chat Systems</span></li>          
