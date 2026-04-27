@@ -21,9 +21,15 @@ const Navbar = () => {
             </button>
 
             <ul className={`${isDropdown ? 'flex' : 'hidden'} flex-col absolute z-10 bg-black left-0 top-full w-full text-gray-400 text-xs sm:hidden`}>
-                <li><a href="#projects" className="hover:text-white block p-4">PROJECTS</a></li>
-                <li><a href="#skills" className="hover:text-white block p-4">SKILLS</a></li>
-                <li><a href="#contact" className="hover:text-white block p-4">CONTACT</a></li>
+                <li>
+                    <a href="#projects" className="hover:text-white block p-4" onClick={() => { setDropdown(false)}}>PROJECTS</a>
+                </li>
+                <li>
+                    <a href="#skills" className="hover:text-white block p-4" onClick={() => { setDropdown(false)}}>SKILLS</a>
+                </li>
+                <li>
+                    <a href="#contact" className="hover:text-white block p-4" onClick={() => { setDropdown(false)}}>CONTACT</a>
+                </li>
             </ul>
       </nav>
     )
