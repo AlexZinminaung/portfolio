@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Project from './components/Project';
 import Skill from './components/Skill';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -19,9 +20,10 @@ function App() {
       <Project/>
       {/* Skills */}
       <Skill/>
-
       {/* Contact */}
       <Contact/>
+      {/* Footer */}
+      <Footer/>
     </main>
   )
 }

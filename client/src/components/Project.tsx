@@ -1,13 +1,34 @@
 import { IoIosArrowRoundUp } from "react-icons/io";
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Project = () => {
 
+    const container = useRef(null);
+    
+    useGSAP(() => {
+        gsap.from('.project-item', {
+            scrollTrigger: {
+                trigger: container.current,
+                start: "top 60%",
+            },
+            y: 40,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: 'power2.out',
+        });
+    }, {scope: container})
     return (
-        <section id="projects" className='py-32 px-8 md:px-12 flex flex-col gap-12'>
+        <section id="projects" ref={container} className='py-32 px-8 md:px-12 flex flex-col gap-12'>
 
             {/* header */}
-            <h1 className='flex justify-start items-center gap-4'>
-                <span className=' text-green-400'>01</span> 
+            <h1 className='project-item flex justify-start items-center gap-4'>
+                <span className='text-green-400'>01</span> 
                 <span className='text-white text-4xl sm:text-6xl font-bowlby'>Projects</span>
                 <span className='w-full h-px bg-gray-800'></span>
             </h1>
@@ -16,7 +37,7 @@ const Project = () => {
             <div className='flex flex-wrap justify-start gap-1'>
 
                 {/* Projects Box */}
-                <div className='flex-1 flex flex-col gap-4 p-6 bg-gray-950 relative group'>
+                <div className='project-item flex-1 flex flex-col gap-4 p-6 bg-gray-950 relative group'>
                     <span className='h-px bg-green-400 absolute top-0 left-0 w-0 group-hover:w-full transition-all duration-300'></span>
                     <span className='text-green-400 text-xs'>FULL STACK - REAL-TIME</span>
                     <h2 className='text-white font-bowlby'>NodeChat</h2>
@@ -37,7 +58,7 @@ const Project = () => {
                 </div>
 
                 {/* Projects Box */}
-                <div className='flex-1 flex flex-col gap-4 p-6 bg-gray-950 relative group'>
+                <div className='project-item flex-1 flex flex-col gap-4 p-6 bg-gray-950 relative group'>
                     <span className='h-px bg-green-400 absolute top-0 left-0 w-0 group-hover:w-full transition-all duration-300'></span>
                     <span className='text-green-400 text-xs'>FULL STACK - REAL-TIME</span>
                     <h2 className='text-white font-bowlby'>Chat App</h2>
@@ -58,7 +79,7 @@ const Project = () => {
                 </div>
 
                 {/* Projects Box */}
-                <div className='flex-1 flex flex-col gap-4 p-6 bg-gray-950 relative group'>
+                <div className='project-item flex-1 flex flex-col gap-4 p-6 bg-gray-950 relative group'>
                     <span className='h-px bg-green-400 absolute top-0 left-0 w-0 group-hover:w-full transition-all duration-300'></span>
                     <span className='text-green-400 text-xs'>Frontend · API</span>
                     <h2 className='text-white font-bowlby'>TMDB Clone</h2>
@@ -79,7 +100,7 @@ const Project = () => {
                 </div>
 
                 {/* Projects Box */}
-                <div className='flex-1 flex flex-col gap-4 p-6 bg-gray-950 relative group'>
+                <div className='project-item flex-1 flex flex-col gap-4 p-6 bg-gray-950 relative group'>
                     <span className='h-px bg-green-400 absolute top-0 left-0 w-0 group-hover:w-full transition-all duration-300'></span>
                     <span className='text-green-400 text-xs'>Full-Stack · Design</span>
                     <h2 className='text-white font-bowlby'>Interi</h2>
@@ -100,7 +121,7 @@ const Project = () => {
                 </div>
 
                 {/* Projects Box */}
-                <div className='flex-1 flex flex-col gap-4 p-6 bg-gray-950 relative group'>
+                <div className='project-item flex-1 flex flex-col gap-4 p-6 bg-gray-950 relative group'>
                     <span className='h-px bg-green-400 absolute top-0 left-0 w-0 group-hover:w-full transition-all duration-300'></span>
                     <span className='text-green-400 text-xs'>Game · Frontend</span>
                     <h2 className='text-white font-bowlby'>Space Shooter</h2>
