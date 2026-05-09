@@ -39,6 +39,27 @@ const Project = () => {
                 {/* Projects Box */}
                 <div className='project-item flex-1 flex flex-col gap-4 p-6 bg-gray-950 relative group'>
                     <span className='h-px bg-green-400 absolute top-0 left-0 w-0 group-hover:w-full transition-all duration-300'></span>
+                    <span className='text-green-400 text-xs'>FULL STACK</span>
+                    <h2 className='text-white font-bowlby'>E-Store</h2>
+                    <p className='text-gray-400 text-xs'>Responsive Interative and professional E-commerce App, build by React , Tailwind, Express </p>
+                    {/* stacks */}
+                    <div className='text-gray-400 text-xs flex sm:flex-nowrap flex-wrap gap-2'>
+                        <span className='p-2 border border-gray-800'>React</span>
+                        <span className='p-2 border border-gray-800'>Tailwind</span>
+                        <span className='p-2 border border-gray-800'>Express</span>
+                        <span className='p-2 border border-gray-800'>Psql</span>
+                    </div>
+
+                    {/* live demo link */}
+                    <a href="https://e-store-six-tau.vercel.app" target="_blank" className='text-gray-400  text-xs flex gap-2 hover:text-green-400'>
+                    <span>LIVE DEMO</span>
+                    <IoIosArrowRoundUp className='size-4 rotate-45'/>
+                    </a>
+                </div>
+
+                {/* Projects Box */}
+                <div className='project-item flex-1 flex flex-col gap-4 p-6 bg-gray-950 relative group'>
+                    <span className='h-px bg-green-400 absolute top-0 left-0 w-0 group-hover:w-full transition-all duration-300'></span>
                     <span className='text-green-400 text-xs'>FULL STACK - REAL-TIME</span>
                     <h2 className='text-white font-bowlby'>NodeChat</h2>
                     <p className='text-gray-400 text-xs'>Multi-user real-time chat 1-to-1 private messaging.Persistent messages with PostgreSQL.</p>
