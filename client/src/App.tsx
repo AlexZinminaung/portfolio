@@ -6,12 +6,48 @@ import Skill from './components/Skill';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 function App() {
+  const container = useRef(null);
+  useGSAP(() => {
+    const cursor = document.querySelector("#cursor");
+    const circle = document.querySelector("#circle"); 
+    
+    // set once
+    gsap.set([cursor, circle], {
+      xPercent: -50,
+      yPercent: -50,
+    });
+
+    const xTo = gsap.quickTo(circle, "x", { duration: 0.2 });
+    const yTo = gsap.quickTo(circle, "y", { duration: 0.2 });
+    
+    const moveCursor = (e: MouseEvent) => {
+      // instant cursor
+      gsap.set(cursor, {
+        x: e.clientX,
+        y: e.clientY,
+      });
+
+      // smooth follower
+      xTo(e.clientX);
+      yTo(e.clientY);
+    };
+
+    window.addEventListener("mousemove", moveCursor);
+
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+      
+    }}, { scope: container });
 
   return (
-    <main className='bg-black min-h-screen'>
-
+    <main ref={container} className='bg-black min-h-screen cursor-none'>
+      <div id='cursor' className=' fixed z-50 block size-3 rounded-full bg-green-400 pointer-events-none'></div>
+      <div id='circle' className=' fixed z-50 block size-10 rounded-full border border-green-400 pointer-events-none'></div>
       {/* navbar */}
       <Navbar/>
       {/* Hero */}
