@@ -1,7 +1,14 @@
-const DEFAULT_IMG =
-  "https://plus.unsplash.com/premium_photo-1664201889922-66bc3c778c1e?fm=jpg&q=60&w=3000&auto=format&fit=crop";
 
 const Projects = [
+  {
+    imgUrl: "./project/flux-expense.png",
+    type: "FRONTEND - DEXIO",
+    title: "E-Store",
+    description: "Responsive interactive chart, expense tracker app built with React, Tailwind, Dexio (local database).",
+    stack: ["React", "Tailwind", "Dxio Database", "Chart.js"],
+    link: "https://flux-expense-tracker.vercel.app/",
+
+  },
   {
     imgUrl: "./project/e-store.png",
     type: "FULL STACK",
