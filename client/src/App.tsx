@@ -59,8 +59,8 @@ function App() {
 
   return (
     <main ref={container} className='bg-black min-h-screen cursor-none'>
-      <div id='cursor' className={` fixed z-50 block size-3 rounded-full bg-green-400 pointer-events-none`}></div>
-      <div id='circle' className={` fixed z-50 block rounded-full size-10 border border-green-400 pointer-events-none`}></div>
+      <div id='cursor' className={`hidden md:block fixed z-50 size-3 rounded-full bg-green-400 pointer-events-none`}></div>
+      <div id='circle' className={`hidden md:block fixed z-50 rounded-full size-10 border border-green-400 pointer-events-none`}></div>
       {/* navbar */}
       <Navbar/>
       {/* Hero */}
