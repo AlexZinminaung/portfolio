@@ -1,5 +1,6 @@
 import { IoIosArrowRoundUp } from "react-icons/io";
-import { useRef } from 'react';
+import { useRef, useContext } from 'react';
+import { CursorContext } from '../contexts/cursorContex'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -7,8 +8,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
+    // use context
+    const cursorContext = useContext(CursorContext);
+    if (!cursorContext) return;
+    const { handleHoverOn, handleHoverOff } = cursorContext;
+
     const container = useRef(null);
-    
+
+
     useGSAP(() => {
         gsap.from('.contact-item', {
             scrollTrigger: {
@@ -31,17 +38,17 @@ const Contact = () => {
             </div> 
 
             <div className='contact-item flex-1 text-white flex flex-col gap-4'>
-                <a href='#' className='flex justify-between items-center p-5 border border-gray-800 hover:border-green-400 hover:text-green-400'>
+                <a href='#' onMouseEnter={handleHoverOn} onMouseLeave={handleHoverOff} className='flex justify-between items-center p-5 border border-gray-800 hover:border-green-400 hover:text-green-400'>
                     <span>EMAIL ME</span>
                     <IoIosArrowRoundUp className='size-4 rotate-45'/>
                 </a>
 
-                <a href='#' className='contact-item flex justify-between items-center p-5 border border-gray-800 hover:border-green-400 hover:text-green-400'>
+                <a href='#' onMouseEnter={handleHoverOn} onMouseLeave={handleHoverOff} className='contact-item flex justify-between items-center p-5 border border-gray-800 hover:border-green-400 hover:text-green-400'>
                     <span>GITHUB</span>
                     <IoIosArrowRoundUp className='size-4 rotate-45'/>
                 </a>
 
-                <a href='#' className='contact-item flex justify-between items-center p-5 border border-gray-800 hover:border-green-400 hover:text-green-400'>
+                <a href='#' onMouseEnter={handleHoverOn} onMouseLeave={handleHoverOff} className='contact-item flex justify-between items-center p-5 border border-gray-800 hover:border-green-400 hover:text-green-400'>
                     <span>UPWORK</span>
                     <IoIosArrowRoundUp className='size-4 rotate-45'/>
                 </a>

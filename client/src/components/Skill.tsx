@@ -2,7 +2,8 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import Skills from '../data/skillData';
+import SkillBox from './SkillBox';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,56 +36,12 @@ const Skill = () => {
             
             {/* skills box container */}
             <div className="flex flex-wrap gap-1">
-                {/* Frontend */}
-                <div className="skill-item flex-1 flex flex-col gap-8 p-5 bg-gray-950">
-                    <h3 className="text-green-400 text-xs">FRONTEND</h3>
-                    <ul className="text-white text-xs flex flex-col gap-2">
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>React</span></li>
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>Tailwind Css</span></li>
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>Gsap animation</span></li>
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>Responsive</span></li>  
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>Phaser</span></li>             
-                    </ul>
-                </div>
+            {
+               Skills.map( (skill, index) => {
+                return <SkillBox key={index} data={skill}/>
+               }) 
+            }
 
-                {/* Backend */}
-                <div className="skill-item flex-1 flex flex-col gap-8 p-5 bg-gray-950">
-                    <h3 className="text-green-400 text-xs">BACKEND</h3>
-                    <ul className="text-white text-xs flex flex-col gap-2">
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>Node.js</span></li>
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>Express</span></li>
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>Rest Api</span></li>
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>JWT Auth</span></li>        
-                    </ul>
-                </div>
-
-                {/* Real Time */}
-                <div className="skill-item flex-1 flex flex-col gap-8 p-5 bg-gray-950">
-                    <h3 className="text-green-400 text-xs">REAL TIME</h3>
-                    <ul className="text-white text-xs flex flex-col gap-2">
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>Socket.io</span></li>  
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>Live Chat Systems</span></li>          
-                    </ul>
-                </div>
-
-                {/* Database */}
-                <div className="skill-item flex-1 flex flex-col gap-8 p-5 bg-gray-950">
-                    <h3 className="text-green-400 text-xs">DATABASE</h3>
-                    <ul className="text-white text-xs flex flex-col gap-2">
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>Postgresql</span></li>
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>SQL</span></li>
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>Database Design</span></li>          
-                    </ul>
-                </div>
-
-                {/* Other */}
-                <div className="skill-item flex-1 flex flex-col gap-8 p-5 bg-gray-950">
-                    <h3 className="text-green-400 text-xs">OTHERS</h3>
-                    <ul className="text-white text-xs flex flex-col gap-2">
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>Figma</span></li>
-                        <li className="flex gap-2 items-center"><span className="block h-2 aspect-square bg-green-400"></span><span>Canvas</span></li>        
-                    </ul>
-                </div>
             </div>
         </section>
     );
