@@ -1,9 +1,19 @@
 
 const Projects = [
   {
+    imgUrl: "./project/pos-system.png",
+    type: "FRONTEND - DEXIO",
+    title: "Pos - system for bussiness (offline)",
+    description: "Responsive interactive chart, pos system app built with React, Tailwind, Dexio (local database).",
+    stack: ["React", "Tailwind", "Dxio Database", "Chart.js"],
+    link: "https://mini-pos-neon.vercel.app/",
+
+  },
+
+  {
     imgUrl: "./project/flux-expense.png",
     type: "FRONTEND - DEXIO",
-    title: "E-Store",
+    title: "Flux Personal Expense",
     description: "Responsive interactive chart, expense tracker app built with React, Tailwind, Dexio (local database).",
     stack: ["React", "Tailwind", "Dxio Database", "Chart.js"],
     link: "https://flux-expense-tracker.vercel.app/",
